@@ -11,9 +11,9 @@ public class ReqresTestGet {
 	public void reqresWithoutBDDApproach() {
 		
 		RequestSpecification request = RestAssured.given();
-		//request.baseUri("http://reqres.in");
+		request.baseUri("http://reqres.in");
 		//request.queryParam("page", 1);
-		request.log();
+		//request.log();
 		Response response = request.get("/api/users?page=1");
 		
 		String responseString = response.asString();
