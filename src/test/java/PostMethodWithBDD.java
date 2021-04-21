@@ -20,13 +20,13 @@ public class PostMethodWithBDD {
 
         RestAssured.given()
                 .baseUri("http://localhost:8088")
-                .body(requestBody)
-                .contentType(ContentType.JSON)
-                .when()
-                .post("/employees")
-                .then()
-                .statusCode(201)
-                .body("id", Matchers.notNullValue())
+                .body(requestBody) // returns request specification
+                .contentType(ContentType.JSON) // request specification
+                .when()   // returns request specification
+                .post("/employees") // returns response of the request
+                .then() // validatable response
+                .statusCode(201) // response specification
+                .body("id", Matchers.notNullValue()) //returns response specification
                 .body("firstName", Matchers.equalTo("Elon1"))
                 .body("lastName", Matchers.equalTo("Musk1"))
                 .body("salary", Matchers.equalTo(3000))
