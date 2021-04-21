@@ -44,4 +44,6 @@ public class ResponseValidatorTypes {
         System.out.println(response);
         JSONAssert.assertEquals(expectedJson , response ,true);
     }
+
+
 }
